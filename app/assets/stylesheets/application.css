@@ -13,3 +13,62 @@
  *= require_tree .
  *= require_self
  */
+
+@charset "utf-8";
+
+/* body */
+body {
+  background: #f2f2f2;
+}
+footer {
+  margin-top: 40px;
+}
+
+/* navbar */
+.navbar {
+  background-color: #fff;
+}
+
+
+/* introduce */
+.introduce {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 400px;
+  background: url("/images/free_image_pet.jpeg") center center no-repeat;
+  background-size: cover;
+}
+
+.introduce .introduce-inner {
+  height: 100%;
+  margin: auto;
+  display: table;
+}
+.introduce .introduce-inner .introduce-contents {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+.introduce .introduce-inner .introduce-contents h1 {
+  margin: 0 0 20px 0;
+  color: rgba(0,0,0,0.5);
+  font-weight: bold;
+  letter-spacing: 0.15em;
+}
+
+.toppage_info h2{
+  color: #337ab7;
+}
+
+.toppage_info h3{
+  color: #555;
+}
+
+.toppage_info a{
+  
+  margin: 50px auto;
+  display: block;
+  width: 50%;
+}
