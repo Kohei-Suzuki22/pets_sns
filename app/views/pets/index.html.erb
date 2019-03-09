@@ -1,0 +1,38 @@
+<div class="row">
+  
+  <div class="col-md-4">
+    <%= render "layouts/object_profile", obj: @user %>
+    <div class="text-center">
+      <% if current_user == @user %>
+        <%= link_to "ペットを登録", new_pet_path(@user), class:"btn btn-primary btn-block" %>
+      <% else %>
+        <a href="#" class="btn btn-success btn-block">Follow</a>  
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="col-md-8 text-center">
+    <h1><%= @user.name %>さんのペット</h1>
+    
+    <% @pets.each do |pet| %>
+      <div class="row pet_each_profile">
+        
+        <div class="col-xs-4">
+          <%#= pet.image %>
+          <img src="/images/free_image_pet.jpeg" alt="no-image" class="img-circle img-lg">
+        </div>
+        <div class="col-xs-8">
+          <h2><%= pet.name %></h2>
+          <%= pet.profile %>
+          <% if current_user == @user %>
+            <%= link_to "プロフィールを編集", edit_pet_path(@user,pet), class:"btn btn-success btn-block" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    
+    
+    
+  </div>
+  
+</div>

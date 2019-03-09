@@ -72,3 +72,69 @@ footer {
   display: block;
   width: 50%;
 }
+
+img{
+  width:80%;
+}
+
+.users_show_profile img{
+  width: 30%;
+}
+
+.profile_form{
+  margin-top: 100px;
+}
+
+.user_pfofile_name{
+  margin-bottom: 50px;
+}
+
+.pets_index_button{
+  background-color: pink;
+  margin-top:60px;
+}
+
+
+.pets_index_button a{
+  color: white;
+}
+
+.pets_index_button a:hover{
+  color: #66cdaa;
+}
+
+/*.pets_row{*/
+/*  margin: 100px 0;*/
+/*}*/
+
+.pets_row img{
+  width: 60%;
+}
+
+.a_pet_row{
+  margin: 50px 0;
+}
+
+.pet_each_profile{
+  margin: 50px 0;
+}
+
+.make_profile_info{
+  border: 1px solid rgba(0,0,0,.5);
+  text-align: center;
+  vertical-align: middle;
+  padding: 30px;
+}
+
+.a_user{
+  margin: 40px;
+  padding: 20px;
+  border-radius: 5%;  
+  border :1px solid #286090;
+  background-color: rgba(21, 111, 44, 0.19);
+}
+
+.user_profile{
+  border-right: 1px solid;
+}
+

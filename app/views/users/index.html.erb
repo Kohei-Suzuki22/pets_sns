@@ -1,2 +1,28 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<% @users.each do |user| %>
+  <div class="row a_user">
+    
+    <div class="col-md-4 user_profile">
+      <%= render "layouts/object_profile", obj: user %>
+      <% unless current_user == user %>
+        <a href="#" class="btn btn-success btn-block">Follow</a>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <% user.pets.each do |pet| %>
+          <div class="col-md-4 pets_profile">
+            <div class="icon text-center">
+              <img src="/images/free_image_pet.jpeg" alt="no-image" class="img-circle img-lg">
+              <div class="profile_name">
+                <h1><%= pet.name %></h1>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="row text-center show_profile">
+        <%= link_to "ユーザプロフィールを詳しく見る", user_path(user), class:"btn btn-primary btn-lg" %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,2 +1,15 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="row">
+  
+  <div class="col-md-4">
+    <div class="text-center">
+      <%= render "layouts/object_profile", obj: @user %>
+    </div>
+  </div>
+  
+  <div class="col-md-8">
+    <div class="profile_form">
+      <%= render "layouts/profile_form", obj: @user %>
+    </div>
+  </div>
+  
+</div>

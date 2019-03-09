@@ -1,13 +1,16 @@
 class UsersController < ApplicationController
   
   before_action :require_user_logged_in, only: [:index,:show,:edit,:update]
+  # before_action :require_user_logged_in, except: [:new,:create]
+  before_action :dry_user_find, only: [:show,:edit,:update]
   
   def index
     @users = User.all
   end
 
   def show
-    @user = User.find(params[:id])
+    @pets = @user.pets
+    # binding.pry
   end
 
   def new
@@ -30,13 +33,25 @@ class UsersController < ApplicationController
   end
 
   def update
+
+    if @user.update(user_params)
+      flash[:success] = "プロフィールを更新しました。"
+      redirect_to @user 
+    else 
+      flash.now[:danger] = "プロフィールが更新できませんでした。"
+      render :edit
+    end
   end
   
   
   private
   
+  def dry_user_find
+    @user = User.find(params[:user_id])
+  end
+  
   def user_params
-    params.require(:user).permit(:name,:email,:password,:password_confirmation)
+    params.require(:user).permit(:name,:email,:password,:password_confirmation,:profile)
   end
   
   
