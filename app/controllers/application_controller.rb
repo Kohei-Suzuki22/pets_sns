@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def counts(user)
+    @count_timelines = user.timelines.count
+    @count_good = user.like_timelines.count
+  end
+  
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show,:new,:create,:edit,:update],param: :user_id  do 
     member do 
       resources :pets, only:[:index,:new,:create,:edit,:update,:destroy]
+      get :likes
     end
   end
   
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
   
   resources :timelines, only: [:create,:destroy]
-  
+  resources :goods, only: [:create,:destroy]
   
   
 end

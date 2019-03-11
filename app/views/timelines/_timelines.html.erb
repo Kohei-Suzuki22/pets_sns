@@ -6,21 +6,23 @@
       
       <div class="media-left">
           <img src="/images/free_image_pet.jpeg" alt="no-image" class="img-circle img-lg">
-            <%= link_to timeline.user.name, user_path(timeline.user) %>
+          <%= link_to timeline.user.name, user_path(timeline.user) %>
       </div>
       
       <div class="media-body text-left">
         <h4><%= timeline.content %></h4>
       </div>
-      <span class="text-muted">
-        <%= timeline.created_at %>
-      </span>
-      <span class="media_good_btn">
-        <a href="#" class="btn btn-success">Good</a>
-      </span>
-      <% if current_user == timeline.user %>
-        <%= link_to "削除", timeline, method: :delete, data:{confirm: "削除してよろしいですか?"}, class:"btn btn-danger" %>
-      <% end %>
+      <div class="media-body-option">
+        <span class="text-muted">
+          <%= timeline.created_at %>
+        </span>
+        <span class="media_good_btn">
+          <%= render "goods/good_button", timeline: timeline %>
+        </span>
+        <% if current_user == timeline.user %>
+          <%= link_to "削除", timeline, method: :delete, data:{confirm: "削除してよろしいですか?"}, class:"btn btn-danger" %>
+        <% end %>
+      </div>
 
     </li>
   

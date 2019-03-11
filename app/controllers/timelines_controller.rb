@@ -17,7 +17,6 @@ class TimelinesController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @timeline.destroy 
     
     flash[:success] = "投稿を削除しました。"

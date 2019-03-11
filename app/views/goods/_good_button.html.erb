@@ -1,0 +1,19 @@
+<% if current_user.good?(timeline) %>
+
+  <%= form_for(current_user.goods.find_by(timeline_id: timeline.id), html:{method: :delete}) do |f| %>
+    
+    <%= hidden_field_tag :timeline_id, timeline.id %>
+    <%= f.submit "unGood", class:"btn btn-warning" %>
+  
+  <% end %>
+
+<% else %>
+  <%= form_for(current_user.goods.build) do |f| %>
+  
+    <%= hidden_field_tag :timeline_id, timeline.id %>
+    
+    <%= f.submit "Good", class:"btn btn-success" %>
+  
+  <% end %>
+
+<% end %>

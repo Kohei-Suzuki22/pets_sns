@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   before_action :require_user_logged_in, only: [:index,:show,:edit,:update]
   # before_action :require_user_logged_in, except: [:new,:create]
-  before_action :dry_user_find, only: [:show,:edit,:update]
+  before_action :dry_user_find, only: [:show,:edit,:update,:likes]
   
   def index
     @users = User.all
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @pets = @user.pets
-    # binding.pry
+    counts(@user)
   end
 
   def new
@@ -41,6 +41,13 @@ class UsersController < ApplicationController
       flash.now[:danger] = "プロフィールが更新できませんでした。"
       render :edit
     end
+    
+  end
+  
+  def likes
+    @pets = @user.pets
+    @goods = @user.like_timelines
+    counts(@user)
   end
   
   

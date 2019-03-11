@@ -161,7 +161,16 @@ img{
   margin: 20px;
 }
 
-.media-list a{
+.media-list .media-body-option form{
   float:right;
   margin: 0 5px 5px 0;
+}
+
+.media-list .media-body-option a{
+  float:right;
+}
+
+
+li .active{
+  background-color: #39cd97;
 }
