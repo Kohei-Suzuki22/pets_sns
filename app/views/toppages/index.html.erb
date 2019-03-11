@@ -1,7 +1,20 @@
 <% if logged_in? %>
 
-  <p>ログイン後</p>
+  <div class="row">
+    
+    <div class="col-sm-4">
+      <%= render "layouts/object_profile", obj: current_user %>
+      <%= render "layouts/post_form", model: @timeline %>
+    </div>
+    <div class="col-sm-offset-1 col-sm-7">
+      <%= render "timelines/timelines", timelines: @timelines %>
+    </div>
+  </div>
 
+  
+  
+  
+  
 <% else %>
   <%= content_for :introduce do %>
     <div class="introduce">

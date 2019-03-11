@@ -138,3 +138,30 @@ img{
   border-right: 1px solid;
 }
 
+
+.media img{
+  width: 150px;
+}
+
+
+.media .media-body h4{
+  padding-left: 20px;
+  
+}
+
+.media{
+  border: 1px solid #286090;
+}
+
+.media-list{
+  background-color: #dff0d8
+}
+
+.media-list img{
+  margin: 20px;
+}
+
+.media-list a{
+  float:right;
+  margin: 0 5px 5px 0;
+}
