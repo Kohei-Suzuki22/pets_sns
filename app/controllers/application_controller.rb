@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   def counts(user)
     @count_timelines = user.timelines.count
     @count_good = user.like_timelines.count
+    @count_followings = user.followings.count 
+    @count_followers = user.followers.count
   end
   
 end

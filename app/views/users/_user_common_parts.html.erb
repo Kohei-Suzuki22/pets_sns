@@ -6,7 +6,8 @@
   <% if current_user == @user %>
     <%= link_to "プロフィールを編集", edit_user_path(current_user), class:"btn btn-success btn-lg" %>
   <% else %>
-    <a href="#" class="btn btn-success btn-lg">Follow</a>
+    <!--<a href="#" class="btn btn-success btn-lg">Follow</a>-->
+    <%= render "friendships/follow_button", user: @user %>
   <% end %>
 </div>
 

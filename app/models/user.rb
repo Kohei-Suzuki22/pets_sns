@@ -25,4 +25,27 @@ class User < ApplicationRecord
   def good?(timeline)
     self.like_timelines.include?(timeline)
   end
+  
+  has_many :friendships 
+  has_many :followings, through: :friendships, source: :follow
+  has_many :reverse_friendships, class_name: "Friendship", foreign_key: "follow_id"
+  has_many :followers, through: :reverse_friendships, source: :user
+  
+  def follow(other_user)
+    unless self == other_user 
+      self.friendships.find_or_create_by(follow_id: other_user.id)
+    end
+  end
+  
+  def unfollow(other_user)
+    friendship = self.friendships.find_by(follow_id: other_user.id)
+    friendship.destroy if friendship
+  end
+  
+  def following?(other_user)
+    self.followings.include?(other_user)
+  end
+  
+  
+  
 end

@@ -52,7 +52,7 @@ footer {
   position: relative;
 }
 .introduce .introduce-inner .introduce-contents h1 {
-  margin: 0 0 20px 0;
+  margin-bottom: 20px;
   color: rgba(0,0,0,0.5);
   font-weight: bold;
   letter-spacing: 0.15em;
@@ -77,6 +77,9 @@ img{
   width:80%;
 }
 
+.show_profile a{
+  margin-top:30px;
+}
 .users_show_profile img{
   width: 30%;
 }
@@ -102,10 +105,6 @@ img{
 .pets_index_button a:hover{
   color: #66cdaa;
 }
-
-/*.pets_row{*/
-/*  margin: 100px 0;*/
-/*}*/
 
 .pets_row img{
   width: 60%;
@@ -145,7 +144,7 @@ img{
 
 
 .media .media-body h4{
-  padding-left: 20px;
+  /*padding-left: 20px;*/
   
 }
 
@@ -174,3 +173,28 @@ img{
 li .active{
   background-color: #39cd97;
 }
+
+/*.edit_friendship{*/
+/*  text-align: center;*/
+/*}*/
+
+.follow_users_list{
+  background-color: #dff0d8;
+}
+
+.media-body{
+  padding-left: 40px;
+} 
+
+.timeline_post_button{
+  margin-bottom: 40px;
+}
+
+.follow_user_image img{
+  margin: 20px;
+}
+
+.follow_user_show_profile a{
+  margin-top: 20px;
+}
+

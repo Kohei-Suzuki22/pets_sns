@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   
-  before_action :require_user_logged_in, only: [:index,:show,:edit,:update]
-  # before_action :require_user_logged_in, except: [:new,:create]
-  before_action :dry_user_find, only: [:show,:edit,:update,:likes]
+  # before_action :require_user_logged_in, only: [:index,:show,:edit,:update]
+  before_action :require_user_logged_in, except: [:new,:create]
+  before_action :dry_user_find, only: [:show,:edit,:update,:likes,:followings,:followers]
   
   def index
     @users = User.all
@@ -47,6 +47,18 @@ class UsersController < ApplicationController
   def likes
     @pets = @user.pets
     @goods = @user.like_timelines
+    counts(@user)
+  end
+  
+  def followings 
+    @pets = @user.pets 
+    @followings = @user.followings
+    counts(@user)
+  end 
+  
+  def followers 
+    @pets = @user.pets 
+    @followers = @user.followers
     counts(@user)
   end
   

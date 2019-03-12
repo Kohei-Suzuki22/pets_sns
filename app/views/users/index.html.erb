@@ -4,7 +4,9 @@
     <div class="col-md-4 user_profile">
       <%= render "layouts/object_profile", obj: user %>
       <% unless current_user == user %>
-        <a href="#" class="btn btn-success btn-block">Follow</a>
+        <div class="text-center">
+          <%= render "friendships/follow_button", user: user %>
+        </div>
       <% end %>
     </div>
     <div class="col-md-8">

@@ -1,0 +1,28 @@
+<% if users.any? %>
+
+  <ul class="mdia-list">
+      <div class="follow_users_list">
+    <% users.each do |user| %>
+    
+        
+      <li class="media">
+        <div class="media-left follow_user_image">  
+          <img src="/images/free_image_pet.jpeg" alt="no-image" class="img-circle img-lg">
+        </div>
+        <div class="media-body">
+        <div>
+          <h1><%= user.name %></h1>
+          <div class="follow_user_show_profile">
+            <%= link_to "プロフィールを見る",user_path(user),class:"btn btn-primary" %>
+          </div>
+        </div>
+        <!--<div>-->
+        <!--</div>-->
+      </div>
+    </li>
+    
+    <% end %>
+      </div>
+  </ul>
+
+<% end %>

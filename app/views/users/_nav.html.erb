@@ -8,10 +8,20 @@
   
   <li class=" <%= 'active' if current_page?(likes_user_path(@user)) %>">
     <%= link_to likes_user_path(@user) do %>
-    Good <span class="badge"><%= @count_good %></span>
+      Good <span class="badge"><%= @count_good %></span>
     <% end %>
-    
   </li>
-  <li><a>Following</a></li>
-  <li><a>Follower</a></li>
+  
+  <li class=" <%= 'active' if current_page?(followings_user_path(@user)) %>">
+    <%= link_to followings_user_path(@user) do %>
+      Followings <span class="badge"><%= @count_followings %></span>
+    <% end %>
+  </li>
+  
+  <li class=" <%= 'active' if current_page?(followers_user_path(@user)) %>">
+    <%= link_to followers_user_path(@user) do %>
+      Followers <span class="badge"><%= @count_followers %></span>
+    <% end %>
+  </li>
+  
 </ul>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     member do 
       resources :pets, only:[:index,:new,:create,:edit,:update,:destroy]
       get :likes
+      get :followings
+      get :followers
     end
   end
   
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   
   resources :timelines, only: [:create,:destroy]
   resources :goods, only: [:create,:destroy]
+  resources :friendships, only: [:create,:destroy]
   
   
 end
