@@ -10,6 +10,7 @@ class TimelinesController < ApplicationController
       flash[:success] = "投稿しました。"
       redirect_to root_path
     else 
+      @timeline = current_user.following_timelines.order("created_at DESC")
       flash.now[:danger] = "投稿を失敗しました。"
       render "toppages/index"
     end

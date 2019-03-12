@@ -46,6 +46,9 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
   
+  def following_timelines 
+    Timeline.where(user_id: self.following_ids.push(self.id))
+  end
   
   
 end
