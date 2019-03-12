@@ -1,7 +1,7 @@
 class TimelinesController < ApplicationController
   
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_timeline_user, only: [:destroy]
   
   def create
     @timeline = current_user.timelines.build(timeline_params)
@@ -30,7 +30,7 @@ class TimelinesController < ApplicationController
     params.require(:timeline).permit(:content,:image,:video)
   end
   
-  def correct_user 
+  def correct_timeline_user 
     @timeline = current_user.timelines.find_by(id: params[:id])
     unless @timeline 
       redirect_to root_url

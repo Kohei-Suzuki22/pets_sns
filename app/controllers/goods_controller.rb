@@ -1,7 +1,7 @@
 class GoodsController < ApplicationController
   
   before_action :require_user_logged_in
-  
+
   def create
     timeline = Timeline.find(params[:timeline_id])
     current_user.good(timeline)

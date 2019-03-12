@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def correct_user
+    unless current_user == User.find(params[:user_id])
+      redirect_to root_url
+    end
+  end
+  
   def counts(user)
     @count_timelines = user.timelines.count
     @count_good = user.like_timelines.count

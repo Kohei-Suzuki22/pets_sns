@@ -1,8 +1,8 @@
 class PetsController < ApplicationController
   
-    before_action :require_user_logged_in, only: [:index,:new,:create,:edit,:update,:destroy]
+    before_action :require_user_logged_in 
     before_action :dry_user_params, except: [:update]
-    # before_action :dry_pet_params, only: [:edit,:update]
+    before_action :correct_user, except: [:index]
 
   def index
     @pets = @user.pets
@@ -26,14 +26,11 @@ class PetsController < ApplicationController
   end
 
   def edit
-    # binding.pry
-    @pet = User.find(params[:user_id]).pets.find(params[:id])
+    @pet = @user.pets.find(params[:id])
   end
 
   def update
-    # binding.pry
     @user = User.find(params[:pet][:user_id])
-    
     
     @pet = @user.pets.find(params[:id])
 
@@ -59,6 +56,7 @@ class PetsController < ApplicationController
   def dry_pet_params
     @pet = @user.pets.find(params[:id])
   end
+  
   
   def pet_params
     params.require(:pet).permit(:name,:profile,:image,:user_id)

@@ -134,8 +134,14 @@ img{
 }
 
 .user_profile{
-  border-right: 1px solid;
+  padding-bottom: 5px;
+  border-right: 1px solid #31708f;
+  border-bottom: 1px solid #31708f;
+  margin-bottom: 50px;
+  
 }
+
+
 
 
 .media img{
@@ -170,9 +176,6 @@ img{
 }
 
 
-li .active{
-  background-color: #39cd97;
-}
 
 /*.edit_friendship{*/
 /*  text-align: center;*/

@@ -1,7 +1,7 @@
 <% @users.each do |user| %>
   <div class="row a_user">
     
-    <div class="col-md-4 user_profile">
+    <div class="col-sm-4 user_profile">
       <%= render "layouts/object_profile", obj: user %>
       <% unless current_user == user %>
         <div class="text-center">
@@ -9,7 +9,7 @@
         </div>
       <% end %>
     </div>
-    <div class="col-md-8">
+    <div class="col-sm-8">
       <div class="row">
         <% user.pets.each do |pet| %>
           <div class="col-md-4 pets_profile">
@@ -23,7 +23,7 @@
         <% end %>
       </div>
       <div class="row text-center show_profile">
-        <%= link_to "ユーザプロフィールを詳しく見る", user_path(user), class:"btn btn-primary btn-lg" %>
+        <%= link_to "ユーザプロフィール", user_path(user), class:"btn btn-primary btn-lg" %>
       </div>
     </div>
   </div>
