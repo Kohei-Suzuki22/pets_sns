@@ -2,7 +2,8 @@ class PetsController < ApplicationController
   
     before_action :require_user_logged_in 
     before_action :dry_user_params, except: [:update]
-    before_action :correct_user, except: [:index]
+    before_action :correct_pet_user, only: [:update,:destroy]
+    before_action :correct_user, only: [:new,:create,:edit]
 
   def index
     @pets = @user.pets
@@ -56,7 +57,12 @@ class PetsController < ApplicationController
   def dry_pet_params
     @pet = @user.pets.find(params[:id])
   end
-  
+
+  def correct_pet_user
+    unless current_user == User.find(params[:pet][:user_id])
+      redirect_to root_url
+    end
+  end
   
   def pet_params
     params.require(:pet).permit(:name,:profile,:image,:user_id)

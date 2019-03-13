@@ -149,10 +149,6 @@ img{
 }
 
 
-.media .media-body h4{
-  /*padding-left: 20px;*/
-  
-}
 
 .media{
   border: 1px solid #286090;
@@ -175,11 +171,6 @@ img{
   float:right;
 }
 
-
-
-/*.edit_friendship{*/
-/*  text-align: center;*/
-/*}*/
 
 .follow_users_list{
   background-color: #dff0d8;
