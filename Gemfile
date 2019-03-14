@@ -57,4 +57,7 @@ gem 'kaminari'
 gem 'pry-byebug', group: :development
 
 gem 'carrierwave'
+# gem 'image_magick', '>=6.8.9' 
 # gem 'rmagick'
+
+gem 'cloudinary'

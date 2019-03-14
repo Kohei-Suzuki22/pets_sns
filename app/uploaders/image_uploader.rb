@@ -48,4 +48,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   def size_range 
     1..5.megabytes
   end
+  
+  if Rails.env.production?
+    include Cloudinary::CarrierWave 
+  else 
+    storage :file 
+  end
+  
+  def public_id 
+    model.id
+  end
+  
+
 end
