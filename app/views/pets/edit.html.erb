@@ -3,6 +3,9 @@
   <div class="col-md-4">
     <div class="text-center">
       <%= render "layouts/object_profile", obj: @pet %>
+      <br>
+      <%= link_to "このペットを登録から削除する", @pet, method: :delete, data:{confirm:"本当にリストから削除してよろしいですか?"},class:"btn btn-danger btn-xs" %>
+      
     </div>
   </div>
 

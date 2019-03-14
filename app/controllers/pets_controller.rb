@@ -1,8 +1,8 @@
 class PetsController < ApplicationController
   
     before_action :require_user_logged_in 
-    before_action :dry_user_params, except: [:update]
-    before_action :correct_pet_user, only: [:update,:destroy]
+    before_action :dry_user_params, except: [:update,:destroy]
+    before_action :correct_pet_user, only: [:update]
     before_action :correct_user, only: [:new,:create,:edit]
 
   def index
@@ -46,6 +46,16 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    
+    @pet = Pet.find(params[:id])
+    if @pet.user == current_user 
+      @pet.destroy 
+      flash[:success] = "登録されたペットから削除しました。"
+      redirect_to current_user
+    else
+      redirect_back(fallback_location: root_url)
+    end
+    
   end
   
   private
