@@ -1,0 +1,19 @@
+<% if obj.image.present? %>
+
+  <%= image_tag obj.image.url, class:"img-circle" %>
+  
+<% else %>
+
+  <% if obj.class == Pet %>
+  
+    <img src="/images/free_image_pet.jpeg" class="img-circle">
+  
+  <% else %>
+  
+    <div class="gravatar_image">
+      <img src="<%= gravatar_url(obj,size:100) %>" alt="" class="img-circle">
+    </div>
+    
+  <% end %>
+  
+<% end %>

@@ -18,8 +18,7 @@
       <div class="row pet_each_profile">
         
         <div class="col-xs-4">
-          <%#= pet.image %>
-          <img src="/images/free_image_pet.jpeg" alt="no-image" class="img-circle img-lg">
+          <%= render "layouts/icon_img", obj: pet %>
         </div>
         <div class="col-xs-8">
           <h2><%= pet.name %></h2>

@@ -6,6 +6,9 @@ class User < ApplicationRecord
   validates :profile, length:{maximum:255}
   has_secure_password
   
+  
+  mount_uploader :image, ImageUploader
+  
   has_many :pets
   
   has_many :timelines

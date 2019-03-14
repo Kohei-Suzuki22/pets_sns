@@ -14,7 +14,8 @@
         <% user.pets.each do |pet| %>
           <div class="col-md-4 pets_profile">
             <div class="icon text-center">
-              <img src="/images/free_image_pet.jpeg" alt="no-image" class="img-circle img-lg">
+              <%= render "layouts/icon_img", obj: pet %>
+
               <div class="profile_name">
                 <h1><%= pet.name %></h1>
               </div>

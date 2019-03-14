@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
 
     if @user.update(user_params)
       flash[:success] = "プロフィールを更新しました。"
@@ -73,7 +74,7 @@ class UsersController < ApplicationController
   
   
   def user_params
-    params.require(:user).permit(:name,:email,:password,:password_confirmation,:profile)
+    params.require(:user).permit(:name,:email,:password,:password_confirmation,:profile,:image,:remove_image)
   end
 
 

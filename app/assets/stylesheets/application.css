@@ -145,8 +145,8 @@ img{
 
 
 .media img{
-  width: 150px;
-}
+  width: 100px;
+ }
 
 
 
@@ -192,3 +192,7 @@ img{
   margin-top: 20px;
 }
 
+.gravatar_image img{
+  size:50mm;  
+  
+}

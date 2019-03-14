@@ -3,5 +3,6 @@ class Pet < ApplicationRecord
   
   validates :name, presence:true, length:{maximum:50};
   validates :profile, length:{maximum:255}
-  validates :image, length:{maximum:255}
+
+  mount_uploader :image, ImageUploader
 end

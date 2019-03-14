@@ -21,6 +21,13 @@
           <%= f.label :profile, "プロフィール" %>
           <%= f.text_area :profile, class:"form-control", rows:5 %>
         </div>
+
+        <div class="form-group">
+          <%= f.label :image, "アイコン画像" %>
+          <%= f.file_field :image %>
+          <br>
+          <p><%= f.check_box :remove_image %>現在のプロフィール画像をやめる</p>
+        </div>
         
         <div class="form-group">
           <%= f.hidden_field :user_id, value:@user.id %>

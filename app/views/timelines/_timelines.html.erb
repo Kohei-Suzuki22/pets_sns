@@ -5,7 +5,7 @@
     <li class="media">
       
       <div class="media-left">
-          <img src="/images/free_image_pet.jpeg" alt="no-image" class="img-circle img-lg">
+          <%= render "layouts/icon_img", obj: timeline.user %>
           <%= link_to timeline.user.name, user_path(timeline.user) %>
       </div>
       
