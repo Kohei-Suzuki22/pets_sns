@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5 
   database: pets_sns_production
   username: pets_sns
   password: <%= ENV['PETS_SNS_DATABASE_PASSWORD'] %>
