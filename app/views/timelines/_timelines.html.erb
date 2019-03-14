@@ -11,6 +11,7 @@
       
       <div class="media-body text-left">
         <h4><%= timeline.content %></h4>
+          <%= image_tag timeline.image.url if timeline.image? %>
       </div>
       <div class="media-body-option">
         <span class="text-muted">

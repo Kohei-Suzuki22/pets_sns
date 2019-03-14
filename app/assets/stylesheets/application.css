@@ -180,6 +180,10 @@ img{
   padding-left: 40px;
 } 
 
+.media-body img{
+  width: 200px;
+}
+
 .timeline_post_button{
   margin-bottom: 40px;
 }
@@ -196,3 +200,4 @@ img{
   size:50mm;  
   
 }
+
