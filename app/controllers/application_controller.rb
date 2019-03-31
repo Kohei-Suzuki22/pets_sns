@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
     @count_followers = user.followers.count
   end
   
+  def dry_user_find
+    @user = User.find(params[:user_id])
+  end
+  
 end

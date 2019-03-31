@@ -34,7 +34,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
 
     if @user.update(user_params)
       flash[:success] = "プロフィールを更新しました。"
@@ -63,10 +62,6 @@ class UsersController < ApplicationController
   
   
   private
-  
-  def dry_user_find
-    @user = User.find(params[:user_id])
-  end
   
   def dry_user_pets 
     @pets = @user.pets

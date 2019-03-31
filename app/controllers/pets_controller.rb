@@ -1,9 +1,10 @@
 class PetsController < ApplicationController
   
     before_action :require_user_logged_in 
-    before_action :dry_user_params, except: [:update,:destroy]
-    before_action :correct_pet_user, only: [:update]
-    before_action :correct_user, only: [:new,:create,:edit]
+    before_action :dry_user_find, except: [:update,:destroy]
+    before_action :dry_pet_find, only: [:edit,:update,:destroy]
+    before_action :correct_pet_user, only: [:edit,:update]
+    before_action :correct_user, only: [:new,:create]
 
   def index
     @pets = @user.pets
@@ -27,14 +28,10 @@ class PetsController < ApplicationController
   end
 
   def edit
-    @pet = @user.pets.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:pet][:user_id])
-    
-    @pet = @user.pets.find(params[:id])
-
+ 
     if @pet.update(pet_params) 
       flash[:success] = "ペットのプロフィールを編集しました。"
       redirect_to pets_path(@user)
@@ -47,7 +44,6 @@ class PetsController < ApplicationController
 
   def destroy
     
-    @pet = Pet.find(params[:id])
     if @pet.user == current_user 
       @pet.destroy 
       flash[:success] = "登録されたペットから削除しました。"
@@ -60,16 +56,12 @@ class PetsController < ApplicationController
   
   private
   
-  def dry_user_params
-    @user = User.find(params[:user_id])
-  end
-  
-  def dry_pet_params
-    @pet = @user.pets.find(params[:id])
+  def dry_pet_find
+    @pet = Pet.find(params[:id])
   end
 
   def correct_pet_user
-    unless current_user == User.find(params[:pet][:user_id])
+    unless current_user == @user = Pet.find(params[:id]).user
       redirect_to root_url
     end
   end
