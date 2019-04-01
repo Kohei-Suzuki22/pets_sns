@@ -19,7 +19,7 @@ class PetsController < ApplicationController
     
     if @pet.save
       flash[:success] = "ペットを登録しました。"
-      redirect_to pets_path
+      redirect_to pets_url
     else 
       flash.now[:danger] = "ペットの登録に失敗しました。"
       render :new 
@@ -34,7 +34,7 @@ class PetsController < ApplicationController
  
     if @pet.update(pet_params) 
       flash[:success] = "ペットのプロフィールを編集しました。"
-      redirect_to pets_path(@user)
+      redirect_to pets_url(@user)
     else 
       flash.now[:danger] = "ペットのプロフィールを編集できませんでした。"
       render :edit 

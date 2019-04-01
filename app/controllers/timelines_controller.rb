@@ -8,7 +8,7 @@ class TimelinesController < ApplicationController
     
     if @timeline.save 
       flash[:success] = "投稿しました。"
-      redirect_to root_path
+      redirect_to root_url
     else 
       @timelines = current_user.following_timelines.order("created_at DESC")
       flash.now[:danger] = "投稿を失敗しました。"
