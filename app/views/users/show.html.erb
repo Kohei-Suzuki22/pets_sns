@@ -1,11 +1,60 @@
-<%= render "user_common_parts" %>
+<div class="users_show_profile">
+  <%= render "layouts/object_profile", obj: @user %>
+</div>
+
+<div class="text-center">
+  <% if current_user == @user %>
+    <%= link_to "プロフィールを編集", edit_user_path(current_user), class:"btn btn-success btn-lg" %>
+  <% else %>
+    <%= render "friendships/follow_button", user: @user %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-6">
+    <div class="pets_index_button text-center">
+      <%= link_to "ペット一覧",pets_path, class:"btn btn-lg" %>
+    </div>
+  </div>
+</div>
+
+<div class="row pets_row">
+  <% @pets.each do |pet| %>
+    <div class="col-md-4 a_pet_row">
+      <%= render "layouts/object_profile", obj: pet %>
+      <div class="text-center">
+        <% if current_user == @user %>
+          <%= link_to "ペットのプロフィール編集",edit_pet_path(@user,pet), class:"btn btn-success btn-lg" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 
 
 <div class="row">
-
-  <%= render "nav" %>
-  <%= render "timelines/timelines", timelines: @user.timelines %>
-
+  
+  <ul class="nav nav-tabs nav-justified">
+  	<li class="active"><a href="#tabs-my_timelines" data-toggle="tab">My_Timelines <span class="badge"><%= @count_timelines %></span></a></li>
+  	<li><a href="#tabs-good" data-toggle="tab">Good <span class="badge"><%= @count_good %></span></a></li>
+  	<li><a href="#tabs-followings" data-toggle="tab">Followings <span class="badge"><%= @count_followings %></span></a></li>
+  	<li><a href="#tabs-followers" data-toggle="tab">Followers <span class="badge"><%= @count_followers %></span></a></li>
+  </ul>
+  
+  <div class="tab-content">
+  	<div class="tab-pane active" id="tabs-my_timelines">
+      <%= render "timelines/timelines", timelines: @user.timelines %>
+  	</div>
+  	<div class="tab-pane" id="tabs-good">
+      <%= render "timelines/timelines", timelines: @goods %>
+  	</div>
+  	<div class="tab-pane" id="tabs-followings">
+  	  <%= render "follow_users", users: @followings %>
+  	</div>
+  	<div class="tab-pane" id="tabs-followers">
+  		<%= render "follow_users", users: @followers %>
+  	</div>
+  </div>
 
 </div>

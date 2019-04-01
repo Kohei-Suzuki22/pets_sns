@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     counts(@user)
+    show_user_info
   end
 
   def new
@@ -45,23 +46,15 @@ class UsersController < ApplicationController
     
   end
   
-  def likes
-    @goods = @user.like_timelines
-    counts(@user)
-  end
-  
-  def followings 
-    @followings = @user.followings
-    counts(@user)
-  end 
-  
-  def followers 
-    @followers = @user.followers
-    counts(@user)
-  end
-  
   
   private
+  
+  def show_user_info
+    @timelines = @user.timelines
+    @goods = @user.like_timelines
+    @followings = @user.followings
+    @followers = @user.followers    
+  end
   
   def dry_user_pets 
     @pets = @user.pets

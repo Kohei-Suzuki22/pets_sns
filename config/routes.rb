@@ -7,9 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show,:new,:create,:edit,:update],param: :user_id  do 
     member do 
       resources :pets, only:[:index,:new,:create,:edit,:update,:destroy]
-      get :likes
-      get :followings
-      get :followers
     end
   end
   
