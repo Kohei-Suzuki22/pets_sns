@@ -11,11 +11,8 @@
     </div>
   </div>
 
-  
-  
-  
-  
 <% else %>
+
   <%= content_for :introduce do %>
     <div class="introduce">
       <div class="introduce-inner">
@@ -30,12 +27,21 @@
   <% end %>
   
   <div class="toppage_info text-center">
-    <h2>自分のペットをたくさんの人に見てもらおう。</h2>
-    <h3>かわいいペットの写真を投稿</h3>
-    <h3>飼い主さんのお友達をつくる</h3>
+    <h3>自分のペットをたくさんの人に見てもらおう。</h3>
+    <h4>かわいいペットの写真を投稿</h4>
+    <h4>飼い主さんのお友達をつくる</h4>
     
     <%= link_to "ログイン", login_path, class:"btn btn-success btn-lg" %>
     
-    
+  </div>
+  
+  <div id="guest_user">
+    <h4>
+      アプリの機能を確認したい方は、ゲストアカウントを用意しています。以下を使ってログインしてください。<br><br>
+    </h4>
+    <p>
+      email: <b>user1@ruby.ruby</b><br>
+      password: <b>1231</b>
+    </p>
   </div>
 <% end %>
