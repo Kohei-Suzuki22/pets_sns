@@ -36,6 +36,10 @@ pets-sns(ペットでつながるSNS)
 ![ユーザ一覧](https://user-images.githubusercontent.com/47558898/58673369-0852a100-8386-11e9-98c8-8027d069d3d8.PNG)
 
 
+## ※caution
+herokuへのクレジットカード登録の不備によって、アプリ上の全ての画像投稿の機能が正常に動かない状態のため、現在改善に取り組んでいます。
+申し訳ございません。
+
 ## used language 
 - Ruby 2.6.0 
 - Ruby on Rails 5.2.3
