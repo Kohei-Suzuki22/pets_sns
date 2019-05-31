@@ -31,9 +31,9 @@ pets-sns(ペットでつながるSNS)
 ![投稿](https://user-images.githubusercontent.com/47558898/58673219-6d59c700-8385-11e9-8328-53bca3a82aea.PNG)
 
 
-#### 他ユーザを見る
-ナビゲーションバーの「Users」
-![予算 － 支出](https://user-images.githubusercontent.com/47558898/58494577-5ca42800-81b0-11e9-9466-726affe63255.PNG)
+#### フォローについて
+ナビゲーションバーの「Users」より、他のユーザのアカウント情報を見ることが出来ます。ここで、気になったユーザをfollowして、仲良くなりましょう。
+![ユーザ一覧](https://user-images.githubusercontent.com/47558898/58673369-0852a100-8386-11e9-98c8-8027d069d3d8.PNG)
 
 
 ## used language 
