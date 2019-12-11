@@ -1,5 +1,6 @@
 pets-sns(ペットでつながるSNS)
 ====
+https://app-pets-sns.herokuapp.com/
 
 ## Overview
 かわいいマイペットで飼い主さん同士でつながることができます。
